@@ -109,3 +109,20 @@ SSH into the control node and follow the steps below:
   - http://Elk-server-ip:5601/app/kibana
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+- SSH to your Jumpbox from your workstation
+- Start your Ansible container and attach 
+  - **sudo docker start (container name)**
+  - **sudo docker attach (container name)**
+- You will then need to download the template filebeat-config.yml to your /etc/ansible/files
+  - Go to [Filebeat Config](https://github.com/mdwcoop24/Elk_Stack_Project/blob/main/Ansible/Filebeat-config.yml) copy the entire configuration file. Then go to /etc/ansible/files and type **nano filebeat-config.yml** and paste it. 
+  - While in the filebeat configuration, edit the file to reflect the Elk IP and port.
+    - Edit line **1106**. Replace the IP with the Elk IP and the port to **9200**
+    - Edit line **1806**. Replace the IP with the Elk IP and the port to **5601**
+- When finished, navigate to the /etc/ansible/roles and create your filebeat playbook
+  - You can copy and paste it from [Filebeat Playbook](https://github.com/mdwcoop24/Elk_Stack_Project/tree/main/Ansible/Filebeat.yml) 
+  - Run the playbook **ansible-playbook filebeat-playbook.yml**
+- Navigate to http://Elk-server-ip:5601/app/kibanna/home
+  - Click **Module Status** then click on **Check Data**
+  
+The result should look like this : 
+![alt text](https://github.com/mdwcoop24/Elk_Stack_Project/blob/main/Images/Filebeat.PNG "Filebeat Data")
