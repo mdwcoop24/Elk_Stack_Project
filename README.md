@@ -7,7 +7,10 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YML file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _/c/Users/mdwco/Documents/Playbooks/Pentest.yml_
+  - _https://github.com/mdwcoop24/Elk_Stack_Project/tree/main/Ansible/Pentest.yml_
+  - _https://github.com/mdwcoop24/Elk_Stack_Project/tree/main/Ansible/Install-elk.yml_
+  - _https://github.com/mdwcoop24/Elk_Stack_Project/tree/main/Ansible/Filebeat.yml_
+  - _https://github.com/mdwcoop24/Elk_Stack_Project/tree/main/Ansible/Metricbeat.yml_
 
 This document contains the following details:
 - Description of the Topology
