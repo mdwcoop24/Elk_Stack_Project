@@ -98,14 +98,14 @@ SSH into the control node and follow the steps below:
 - Update the filebeat configuration file to include the private IP of the Elk machine in lines 1106 and 1806.
 - Run the playbook, and navigate to http://Elk-server-ip:5601/app/kibana to check that the installation worked as expected.
 
-- _Which file is the playbook? Where do you copy it?_
+ _Which file is the playbook? Where do you copy it?_
   - filebeat-playbook.yml 
   - Copied the playbook to /etc/ansible/roles
 
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+_Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
   - You will update the /etc/ansible/hosts file to include the IP addresses of the machines you will run the playbook on.   Once this is done, you will specify which "hosts" group to run the playbook on within the playbook itself. If Elk is listed as host, it will download to the ELK server whereas if webservers is listed as host, it will install on the DVWR machines.  
 
-- _Which URL do you navigate to in order to check that the ELK server is running?
+_Which URL do you navigate to in order to check that the ELK server is running?
   - http://Elk-server-ip:5601/app/kibana
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
