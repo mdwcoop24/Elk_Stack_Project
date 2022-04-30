@@ -3,7 +3,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-~/Elk_Stack_Project/Diagram/Azure-VN.png
+! [~/Elk_Stack_Project/Diagram/Azure-VN.png]
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YML file may be used to install only certain pieces of it, such as Filebeat.
 
