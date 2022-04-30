@@ -25,32 +25,33 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting access to the network.
-- Load balancers do not just distribute network or application traffic across a number of servers, they also protect against Denial of Service (DDoS) attacks by analyzing that traffic. A Jump box is a hardened device that allows access and easy administration of other devices and servers maintained by Administrators. This also helps with completeing administative tasks over several devices at once.
+Load balancing ensures that the application will be highly *available*, in addition to restricting *access* to the network.
+- Load balancers do not just distribute network or application traffic across a number of servers, they also protect against Denial of Service (DDoS) attacks by analyzing that traffic. 
+- A Jump box is a hardened device that allows access and easy administration of other devices and servers maintained by Administrators. This also helps with completeing administative tasks over several devices at once.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- Filebeat watches for log files and locations that you specify and indexes them into either Elasticsearch or Logstash.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the *data* and system *logs*.
+- Filebeat watches for log files and locations that you specify, and will collect and index them into either Elasticsearch or Logstash. Such as Apache, Azure tools, or MySQL logs.
 - Metricbeat monitors the servers by collecting metrics from the system and the services running, and then sends the output to either Elasticsearch or Logstash. 
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.4   | Linux            |
-| Web-1    | Server   | 10.0.0.5   | Linux            |
-| Web-2    | Server   | 10.0.0.6   | Linux            |
-| ElkVM    |Log Server| 10.1.0.4   | Linux            |
+
+| Name     | Function    | IP Address | Operating System |
+|----------|-------------|------------|------------------|
+| Jump Box | Gateway     | 10.0.0.4   | Linux Ubuntu     |
+| Web-1    | WebServer   | 10.0.0.5   | Linux Ubuntu     |
+| Web-2    | WebServer   | 10.0.0.6   | Linux Ubumtu     |
+| ElkVM    |Log Server   | 10.1.0.4   | Linux Ubuntu     |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- 107.126.59.63 Workstation public IP address
+- Workstation public IP address 107.126.59.63  
 
-Machines within the network can only be accessed by the Jump Box.
-- The ElkVM can only be accessed by the Jump Box and the workstaion machines. This is done by using the ElkVM IP 10.1.0.4 and doing a ssh through port 22, and using the workstation public IP via TCP port 5601.
+Machines within the network can only be accessed by the *Jump Box*.
+- The ElkVM can only be accessed by the Jump Box and the workstaion machine. This is done by using the ElkVM IP 10.1.0.4 and doing a ssh through port 22, and using the workstation public IP via TCP port 5601.
 
 A summary of the access policies in place can be found in the table below.
 
@@ -58,8 +59,8 @@ A summary of the access policies in place can be found in the table below.
 |----------|---------------------|----------------------|
 | Jump Box | Yes                 | 20.58.178.26 (public)|
 | ElkVM    | Yes (TCP Port 5601) | 20.37.7.13   (public)|
-| Web-1    | No                  |                      |
-| Web-2    | No                  |                      |
+| Web-1    | No                  | 10.0.0.5             |
+| Web-2    | No                  | 10.0.0.6             |
 
 ### Elk Configuration
 
